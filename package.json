@@ -1,0 +1,17 @@
+{
+  "name": "doomsong-acts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@owlbear-rodeo/sdk": "^3.1.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

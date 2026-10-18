@@ -1,0 +1,16 @@
+{
+  "name": "Doomsong — Akty Walki",
+  "version": "0.1.0",
+  "manifest_version": 1,
+  "author": "AttentionHorse1",
+  "description": "Dramatyczne ogłoszenia sześciu aktów walki w Doomsong.",
+  "icon": "/doomsong-acts/icon.svg",
+  "background_url": "/doomsong-acts/background.html",
+  "action": {
+    "title": "Doomsong — Akty Walki",
+    "icon": "/doomsong-acts/icon.svg",
+    "popover": "/doomsong-acts/index.html",
+    "width": 370,
+    "height": 440
+  }
+}

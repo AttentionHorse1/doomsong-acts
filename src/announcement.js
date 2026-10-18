@@ -1,0 +1,10 @@
+import OBR from "@owlbear-rodeo/sdk";
+import "./theme.css";
+import {PHASE_NAMES,MODAL_ID} from "./state.js";
+const phase=Number(new URLSearchParams(location.search).get("phase"));
+const round=Number(new URLSearchParams(location.search).get("round"));
+const valid=Number.isInteger(phase)&&phase>=0&&phase<=6?phase:0;
+document.getElementById("announce-title").textContent=PHASE_NAMES[valid];
+document.getElementById("overline").textContent=valid===0?`RUNDA ${Number.isInteger(round)&&round>0?round:1} · PRZYGOTOWANIE`:"DOOMSONG · WALKA";
+document.getElementById("announce-subtitle").textContent=valid===0?"NADCHODZI KOLEJNA RUNDA":"NIECH ROZSTRZYGNIE SIĘ LOS";
+OBR.onReady(()=>{setTimeout(()=>{void OBR.modal.close(MODAL_ID).catch(()=>{});},2900);});
