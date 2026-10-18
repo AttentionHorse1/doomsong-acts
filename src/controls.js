@@ -11,6 +11,7 @@ let unsubscribe = null;
 
 function render() {
   el("phase-name").textContent = current.active ? PHASE_NAMES[current.phase] : "SPOCZYNEK";
+  el("phase-name").classList.toggle("is-preparation", current.active && current.phase === 0);
   el("combat-label").textContent = current.active ? "TRWA WALKA" : "WALKA UŚPIONA";
   el("round").textContent = String(current.round);
   el("phase-indicator").textContent = current.active ? (current.phase === 0 ? "✣ · I · II · III · IV · V · VI" : `✣ · I · II · III · IV · V · VI  —  ${PHASE_NAMES[current.phase]}`) : "—";
