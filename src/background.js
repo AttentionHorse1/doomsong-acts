@@ -24,9 +24,10 @@ async function announce(state) {
   await OBR.modal.open({
     id: MODAL_ID,
     url: `${import.meta.env.BASE_URL}announcement.html?phase=${state.phase}&round=${state.round}&revision=${state.revision}`,
-    width: 760,
+    width: 510,
     height: 530,
     hideBackdrop: true,
+    hidePaper: true,
   });
   closeTimer = setTimeout(() => { void OBR.modal.close(MODAL_ID).catch(() => {}); }, MODAL_DURATION_MS);
 }
