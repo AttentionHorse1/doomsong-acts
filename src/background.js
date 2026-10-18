@@ -25,8 +25,8 @@ async function announce(state) {
   await OBR.modal.open({
     id: MODAL_ID,
     url: `${import.meta.env.BASE_URL}announcement.html?phase=${state.phase}&round=${state.round}&revision=${state.revision}`,
-    width: 310,
-    height: 330,
+    width: 710,
+    height: 430,
     hideBackdrop: true,
     hidePaper: true,
   });
