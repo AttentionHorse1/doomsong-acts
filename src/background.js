@@ -8,11 +8,9 @@ let unsubscribe = null;
 let closeTimer;
 
 async function updateBadge(state) {
-  // Owlbear nie pozwala ustawić koloru cyfr na natywnej plakietce.
-  // W trybie walki używamy ikony ze zintegrowaną białą cyfrą na czerni.
+  // Zawsze pokazuj ikonę kruka, również podczas walki.
   await OBR.action.setBadgeText(undefined);
-  const file = state.active ? `phase-icons/${state.phase}.svg` : "icon.svg";
-  await OBR.action.setIcon(`${import.meta.env.BASE_URL}${file}`);
+  await OBR.action.setIcon(`${import.meta.env.BASE_URL}icon.svg`);
 }
 
 async function announce(state) {
