@@ -37,3 +37,8 @@ body.announcement #act-art {
   box-shadow: none;
   border-radius: 0;
 }
+
+/* Panel MG: długa nazwa fazy musi mieścić się również w wąskim popoverze. */
+.phase-card { min-width: 0; overflow: hidden; }
+.phase-card h1 { max-width: 100%; overflow-wrap: anywhere; }
+.phase-card h1.is-preparation { font-size: clamp(17px, 5.4vw, 23px); letter-spacing: -.045em; line-height: 1.18; }
