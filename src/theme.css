@@ -42,3 +42,30 @@ body.announcement #act-art {
 .phase-card { min-width: 0; overflow: hidden; }
 .phase-card h1 { max-width: 100%; overflow-wrap: anywhere; }
 .phase-card h1.is-preparation { font-size: clamp(17px, 5.4vw, 23px); letter-spacing: -.045em; line-height: 1.18; }
+
+/* Tablet: ogłoszenie aktu nie powinno tworzyć przewijanej strony. */
+html:has(> body.announcement),
+body.announcement {
+  overflow: hidden !important;
+  overscroll-behavior: none;
+  scrollbar-width: none;
+}
+html:has(> body.announcement)::-webkit-scrollbar,
+body.announcement::-webkit-scrollbar,
+body.announcement .art-announcement::-webkit-scrollbar {
+  display: none;
+}
+body.announcement .art-announcement {
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden !important;
+  scrollbar-width: none;
+}
+body.announcement #act-art {
+  flex-shrink: 1;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
