@@ -1,5 +1,5 @@
 import OBR from "@owlbear-rodeo/sdk";
-import { MODAL_ID, PHASE_NAMES, STATE_KEY, phaseBadge, readState } from "./state.js";
+import { MODAL_ID, STATE_KEY, readState } from "./state.js";
 
 const MODAL_DURATION_MS = 2900;
 let current = null;
@@ -8,8 +8,11 @@ let unsubscribe = null;
 let closeTimer;
 
 async function updateBadge(state) {
-  await OBR.action.setBadgeText(phaseBadge(state));
-  if (state.active) await OBR.action.setBadgeBackgroundColor("#22201b");
+  // Owlbear nie pozwala ustawić koloru cyfr na natywnej plakietce.
+  // W trybie walki używamy ikony ze zintegrowaną białą cyfrą na czerni.
+  await OBR.action.setBadgeText(undefined);
+  const file = state.active ? `phase-icons/${state.phase}.svg` : "icon.svg";
+  await OBR.action.setIcon(`${import.meta.env.BASE_URL}${file}`);
 }
 
 async function announce(state) {
@@ -47,7 +50,7 @@ async function mountScene(ready) {
   clearTimeout(closeTimer);
   await OBR.modal.close(MODAL_ID).catch(() => {});
   sceneReady = ready;
-  if (!ready) { await OBR.action.setBadgeText(undefined); return; }
+  if (!ready) { await OBR.action.setBadgeText(undefined); await OBR.action.setIcon(`${import.meta.env.BASE_URL}icon.svg`); return; }
   unsubscribe = OBR.scene.onMetadataChange((metadata) => { void handleState(metadata).catch(console.error); });
   const metadata = await OBR.scene.getMetadata();
   await handleState(metadata, true);
