@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="9" fill="#f0e9dc"/><path d="M10 12h44v40H10z" fill="none" stroke="#171511" stroke-width="2"/><text x="32" y="44" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="35" fill="#171511">VI</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<rect width="64" height="64" rx="9" fill="#f0e9dc"/>
+<path d="M10 12h44v40H10z" fill="none" stroke="#171511" stroke-width="2"/>
+<path d="M17 15h30m-30 34h30" stroke="#171511" stroke-width="2"/>
+<text x="32" y="44" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="35" fill="#171511">VI</text>
+</svg>

@@ -8,10 +8,6 @@
     "build": "vite build",
     "test": "node --test test/*.test.js"
   },
-  "dependencies": {
-    "@owlbear-rodeo/sdk": "^3.1.0"
-  },
-  "devDependencies": {
-    "vite": "^6.0.0"
-  }
+  "dependencies": {"@owlbear-rodeo/sdk": "^3.1.0"},
+  "devDependencies": {"vite": "^6.0.0"}
 }
